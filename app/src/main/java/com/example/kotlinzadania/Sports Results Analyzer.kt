@@ -41,6 +41,11 @@ class sportsResultAnalyzer{
         println("Suma wszystkich wyników: $suma")
     }
 
+    fun maksWynik(){
+        val maks = wyniki.maxOrNull()
+        println("Maksymalny wynik: $maks")
+    }
+
     fun menu(){
         while (true){
             println("\nWybierz opcję:")
@@ -48,12 +53,14 @@ class sportsResultAnalyzer{
             println("2. Pokaż wynik powyżej progu")
             println("3. Dodaj bonusowe punkty do wyników")
             println("4. Oblicz sumę wyników")
+            println("5. Znajdź maksymalny wynik")
 
             when(readln().toIntOrNull()) {
                 1 -> dodajWynik()
                 2 -> wynikPowyzejProgu()
                 3 -> bonusowePunkty()
                 4 -> sumaWynikow()
+                5 -> maksWynik()
                 else -> println("Błąd!")
             }
         }
