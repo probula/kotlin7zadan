@@ -46,6 +46,16 @@ class sportsResultAnalyzer{
         println("Maksymalny wynik: $maks")
     }
 
+    fun roznicaMaksMin(){
+        val maks = wyniki.maxOrNull()
+        val min = wyniki.minOrNull()
+        if (maks != null) {
+            println("Różnica pomiędzy maksymalnym a minimalnym wynikiem: ${maks - min!!}")
+        }else{
+            println("Błąd!")
+        }
+    }
+
     fun menu(){
         while (true){
             println("\nWybierz opcję:")
@@ -54,6 +64,7 @@ class sportsResultAnalyzer{
             println("3. Dodaj bonusowe punkty do wyników")
             println("4. Oblicz sumę wyników")
             println("5. Znajdź maksymalny wynik")
+            println("6. Oblicz różnice pomiedzy maksymalnym a minimalnym wynikiem")
 
             when(readln().toIntOrNull()) {
                 1 -> dodajWynik()
@@ -61,6 +72,7 @@ class sportsResultAnalyzer{
                 3 -> bonusowePunkty()
                 4 -> sumaWynikow()
                 5 -> maksWynik()
+                6 -> roznicaMaksMin()
                 else -> println("Błąd!")
             }
         }
