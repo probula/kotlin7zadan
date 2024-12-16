@@ -25,16 +25,28 @@ class sportsResultAnalyzer{
         }
     }
 
+    fun bonusowePunkty(){
+        println("Podaj liczbę punktów do dodania do każdego wyniku:")
+        val bonus = readln().toIntOrNull()
+        if(bonus != null) {
+            wyniki = wyniki.map { it + bonus }.toMutableList()
+            println("Dodano $bonus puntów do każdego wyniku.")
+        }else{
+            println("Błąd")
+        }
+    }
+
     fun menu(){
         while (true){
             println("\nWybierz opcję:")
             println("1. Dodaj wynik meczu")
             println("2. Pokaż wynik powyżej progu")
+            println("3. Dodaj bonusowe punkty do wyników")
 
             when(readln().toIntOrNull()) {
                 1 -> dodajWynik()
                 2 -> wynikPowyzejProgu()
-
+                3 -> bonusowePunkty()
                 else -> println("Błąd!")
             }
         }
