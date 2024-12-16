@@ -36,17 +36,24 @@ class sportsResultAnalyzer{
         }
     }
 
+    fun sumaWynikow(){
+        val suma = wyniki.sum()
+        println("Suma wszystkich wyników: $suma")
+    }
+
     fun menu(){
         while (true){
             println("\nWybierz opcję:")
             println("1. Dodaj wynik meczu")
             println("2. Pokaż wynik powyżej progu")
             println("3. Dodaj bonusowe punkty do wyników")
+            println("4. Oblicz sumę wyników")
 
             when(readln().toIntOrNull()) {
                 1 -> dodajWynik()
                 2 -> wynikPowyzejProgu()
                 3 -> bonusowePunkty()
+                4 -> sumaWynikow()
                 else -> println("Błąd!")
             }
         }
