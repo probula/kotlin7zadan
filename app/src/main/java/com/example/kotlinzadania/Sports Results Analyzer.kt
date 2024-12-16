@@ -56,6 +56,17 @@ class sportsResultAnalyzer{
         }
     }
 
+    fun liczbaMeczyPowyzejProgu() {
+        println("Podaj próg:")
+        val prog = readln().toIntOrNull()
+        if (prog != null) {
+            val liczbaWynikow = wyniki.count { it > prog }
+            println("Liczba meczy powyżej $prog punktów: $liczbaWynikow")
+        } else {
+            println("Błąd!")
+        }
+    }
+
     fun menu(){
         while (true){
             println("\nWybierz opcję:")
@@ -65,6 +76,7 @@ class sportsResultAnalyzer{
             println("4. Oblicz sumę wyników")
             println("5. Znajdź maksymalny wynik")
             println("6. Oblicz różnice pomiedzy maksymalnym a minimalnym wynikiem")
+            println("7. Zlicz ile meczy jest powyżej progu")
 
             when(readln().toIntOrNull()) {
                 1 -> dodajWynik()
@@ -73,6 +85,7 @@ class sportsResultAnalyzer{
                 4 -> sumaWynikow()
                 5 -> maksWynik()
                 6 -> roznicaMaksMin()
+                7 -> liczbaMeczyPowyzejProgu()
                 else -> println("Błąd!")
             }
         }
