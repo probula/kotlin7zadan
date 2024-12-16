@@ -77,6 +77,7 @@ class sportsResultAnalyzer{
             println("5. Znajdź maksymalny wynik")
             println("6. Oblicz różnice pomiedzy maksymalnym a minimalnym wynikiem")
             println("7. Zlicz ile meczy jest powyżej progu")
+            println("8. Zakończ")
 
             when(readln().toIntOrNull()) {
                 1 -> dodajWynik()
@@ -86,6 +87,10 @@ class sportsResultAnalyzer{
                 5 -> maksWynik()
                 6 -> roznicaMaksMin()
                 7 -> liczbaMeczyPowyzejProgu()
+                8 -> {
+                    println("Zakończono program.")
+                    return
+                }
                 else -> println("Błąd!")
             }
         }
